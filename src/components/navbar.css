@@ -1,0 +1,181 @@
+/* Navbar theme: dark background, white text, orange accent */
+.navbar {
+  --navbar-bg: #1a1a1a;
+  --navbar-text: #ffffff;
+  --navbar-text-muted: #a3a3a3;
+  --navbar-accent: #e85d04;
+  --navbar-accent-hover: #d45103;
+  --navbar-radius: 9999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Brand: icon + title + tagline */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--navbar-text);
+  margin: 0;
+}
+
+.navbar__brand:hover {
+  color: var(--navbar-text);
+  text-decoration: none;
+}
+
+.navbar__brand-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.navbar__brand-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navbar-text);
+}
+
+.navbar__brand-tagline {
+  font-size: var(--text-sm);
+  color: var(--navbar-text-muted);
+  font-weight: 400;
+}
+
+/* Nav: bordered pill container + sliding active indicator */
+.navbar__nav-wrap {
+  --nav-wrap-bg: #212121;
+  --nav-wrap-border: rgba(255, 255, 255, 0.15);
+
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  background-color: var(--nav-wrap-bg);
+  border: 1px solid var(--nav-wrap-border);
+  border-radius: 9999px;
+}
+
+.navbar__nav-pill {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: 0;
+  background-color: var(--navbar-accent);
+  border-radius: 9999px;
+  transition: left 0.25s ease, width 0.25s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar__link {
+  color: var(--navbar-text-muted);
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-weight: 500;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 9999px;
+  transition: color 0.2s ease;
+  position: relative;
+  display: block;
+}
+
+.navbar__link:hover {
+  color: var(--navbar-text);
+  text-decoration: none;
+}
+
+.navbar__link--active {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.navbar__link--active:hover {
+  color: #fff;
+}
+
+/* Search icon button */
+.navbar__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--navbar-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar__search:hover {
+  color: var(--navbar-text);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar__search:focus-visible {
+  outline: 2px solid var(--navbar-accent);
+  outline-offset: 2px;
+}
+
+.navbar__search-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* CTA button */
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--navbar-accent);
+  color: #fff;
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--navbar-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navbar__cta:hover {
+  background-color: var(--navbar-accent-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__cta:focus-visible {
+  outline: 2px solid var(--navbar-accent);
+  outline-offset: 2px;
+}
